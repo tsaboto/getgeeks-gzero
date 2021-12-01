@@ -15,3 +15,20 @@ Modal Content Should Be
 
     Wait For Elements State      ${content}     visible     5
     Get text                     ${content}     equal       ${expect_text}     
+
+
+Alert Spans Should Be
+    [Arguments]     ${expect_alerts}
+
+    @{got_alerts}       Create List
+
+    ${spans}            Get Elements        xpath=//span[@class="error"]
+
+    FOR     ${span}     IN      @{spans}
+
+        ${text}             Get text            ${span}
+        Append To List      ${got_alerts}       ${text}
+
+    END
+
+    Lists Should Be Equal       ${expect_alerts}        ${got_alerts}

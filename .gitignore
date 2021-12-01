@@ -1,2 +1,6 @@
 logs
 __pycache__
+
+SignupRequired.robot
+Temp.robot
+.DS_Store
