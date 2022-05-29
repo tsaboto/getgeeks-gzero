@@ -9,9 +9,8 @@ Test Teardown       Finish Session
 
 *Test Cases*
 User login
-    
-    ${user}                     Factory User Login
-
+    [Tags]      smoke
+    ${user}                     Factory User    login
     Go To Login Page
     Fill Credentials            ${user}
     Submit Credentials
