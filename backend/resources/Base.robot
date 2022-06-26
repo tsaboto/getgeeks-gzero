@@ -13,4 +13,5 @@ Resource            Helpers.robot
 *Variables*
 
 ${API_USERS}        https://getgeeks-users-tsaboto.herokuapp.com
+${API_GEEKS}        https://getgeeks-geeks-tsaboto.herokuapp.com
 

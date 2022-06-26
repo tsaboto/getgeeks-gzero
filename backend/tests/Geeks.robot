@@ -65,3 +65,4 @@ Get Geek List
 
     ${total}            Get Length      ${response.json()}[Geeks]
     Should Be True      ${total} > 0
+    

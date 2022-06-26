@@ -29,4 +29,3 @@ Remove user
     IF  '${token}'
         DELETE User  ${token}
     END
-    
