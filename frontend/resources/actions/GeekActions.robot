@@ -16,8 +16,14 @@ Fill Geek Form
     Fill text       id=whatsapp     ${geek_profile}[whats]
     Fill text       id=desc         ${geek_profile}[desc]
 
-    Select Options By       id=printer_repair       value       ${geek_profile}[printer_repair]
-    Select Options By       id=work                 text       ${geek_profile}[work]
+    IF      '${geek_profile}[printer_repair]'
+        Select Options By       id=printer_repair       value       ${geek_profile}[printer_repair]
+    END
+
+    IF      '${geek_profile}[work]'
+        Select Options By       id=work                 text       ${geek_profile}[work]
+    END
+
     # estou usando em em value e no outro text para ter as duas estrategia de busca e seleção de campo
     
     Fill text               id=cost       ${geek_profile}[cost]
