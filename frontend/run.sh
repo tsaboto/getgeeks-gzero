@@ -1,4 +1,11 @@
 robot -l NONE -o NONE -r NONE tasks/Delorean.robot
-# robot -d ./logs -i smoke -v BROWSER:chromium -v HEADLESS:True tests
-robot -d ./logs  -v BROWSER:chromium -v HEADLESS:True tests
+pabot -X sunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True tests
+
+rm -rf ./logs/browser
+mkdir ./logs/browser
+mkdir ./logs/browser/screenshot
+
+cp $(find ./logs/pabot_results -type f -name "*.png") ./logs/browser/screenshot
+
+# robot -d ./logs  -v BROWSER:chromium -v HEADLESS:True tests
 # robot -d ./logs tests 
